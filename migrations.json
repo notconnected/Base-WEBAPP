@@ -1,5 +1,5 @@
 {
-    "name": "Paymentsapi migrations",
+    "name": "Migrations",
     "migrations_namespace": "Migrations",
     "table_name": "doctrine_migration_versions",
     "column_name": "version",
