@@ -5,8 +5,8 @@
 - /admin/ - админка
 - /publicPart/... - Пример публичного контроллера
 - /api/... - Пример публичного API
-	- (GET yourdomain.ru/api/index = /application/Controllers/Api.php->getActionIndex())
-	- (POST yourdomain.ru/api/dosomething = /application/Controllers/Api.php->postActionDosomething())
+	- GET yourdomain.ru/api/index = /application/Controllers/Api.php->getActionIndex()
+	- POST yourdomain.ru/api/dosomething = /application/Controllers/Api.php->postActionDosomething()
 ...
 
 
