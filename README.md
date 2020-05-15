@@ -20,13 +20,14 @@ Twig кеширует файлы шаблонов в `/application/cache`. Па�
 В папке проекта:
 
 1. `composer install`
-2. `./vendor/bin/doctrine-migrations migrate --no-interaction`
+2. `./vendor/bin/doctrine-migrations diff`
+3. `./vendor/bin/doctrine-migrations migrate --no-interaction`
 
 
 
 ## Первый запуск
 
-1. После создания таблиц в бд (выполните 2 команды: `./vendor/bin/doctrine-migrations diff`, `./vendor/bin/doctrine-migrations migrate`) необходимо их наполнить, на данный момент миграции для этого не созданы.
+1. После создания таблиц в бд необходимо их наполнить, на данный момент миграции для этого не созданы.
 2. Закомментируйте вызовы `$this->checkPrivilegesAndDoAction(__FUNCTION__);` в контроллере application\Controllers\Admin.php
 3. Перейдите по адресу yourdomain.ru/admin и создайте экшены, пользователей, группы и распределите права доступа
 4. Раскомментируйте вызовы `$this->checkPrivilegesAndDoAction(__FUNCTION__);` в контроллере application\Controllers\Admin.php. Enjoy!
