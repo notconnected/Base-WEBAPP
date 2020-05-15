@@ -1,0 +1,18 @@
+{% extends "/admin/baseAdmin.html" %}
+
+{% block content %}
+<form method="POST">
+    Группа: <select name="group_id">
+                {% for group in groups %}
+                <option value="{{group.id}}" {% if group.id == current_group %}selected="selected"{% endif %}>{{group.name}}</option>
+                {% endfor %}
+            </select></br>
+    Экшены: </br>
+                {% for action in actions %}
+                <input type="checkbox" id="action_{{action.name}}" name="actions[{{action.name}}]" {% if action.checked %}checked="checked"{% endif %}>
+                <label for="action_{{action.name}}">{{action.description}} ({{action.name}})</label></br>
+                {% endfor %}
+                </br>
+    <input type="submit">
+</form>
+{% endblock %}

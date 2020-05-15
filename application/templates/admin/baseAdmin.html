@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <link rel="stylesheet" href="{{base_url}}/static/css/style.css" />
+            <title>{% block title %}{% endblock %} - Payments Admin</title>
+        {% endblock %}
+    </head>
+    <body>
+        {% if message %}
+        <div style="border: 1px solid red; text-align: center;">{{message}}</div>
+        {% endif %}
+        
+        {% if __authorized %}
+        Здравствуйте, {{__user_name}}
+            <a href="/admin/changePassword">Сменить пароль</a>
+            <a href="/admin/logout">Выйти</a>
+        {% endif %}
+        {{ include('admin/sidebar.html') }}
+        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="footer">
+            {% block footer %}
+                
+            {% endblock %}
+        </div>
+    </body>
+</html>

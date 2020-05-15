@@ -1,0 +1,32 @@
+{% extends "admin/baseAdmin.html" %}
+
+{% block content %}
+    <a href="/admin/addUser">Добавить нового пользователя</a> 
+    | <a href="/admin/addUserToGroup">Добавить пользователя в группу</a></br>
+    <table border="1">
+        <tr>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Описание</th>
+            <th>Дата создания</th>
+            <th>Группы ползователя</th>
+            <th>Действия</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.description }}</td>
+            <td>{{ user.created }}</td>
+            <td>
+                {% for group in user.groups %}
+                {{ group.name }}  - <a href="/admin/deleteUserFromGroup/{{group.id}}">Удалить привилегию</a></br>
+                {% endfor %}
+            
+            </td>
+            <td><a href="/admin/deleteUser/{{ user.id }}">удалить</a> | 
+                <a href="/admin/changePassword/{{ user.id }}">сменить пароль</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

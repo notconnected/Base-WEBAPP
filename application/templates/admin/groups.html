@@ -1,0 +1,31 @@
+{% extends "admin/baseAdmin.html" %}
+
+{% block content %}
+    <a href="/admin/addGroup">Добавить новую группу</a> | 
+    <a href="/admin/addGroupPrivileges">Добавить привилегии для группы</a></br>
+    <table border="1">
+        <tr>
+            <th>Имя группы</th>
+            <th>Описание</th>
+            <th>Дата создания</th>
+            <th>Привилегии группы</th>
+            <th>Действия</th>
+        </tr>
+        {% for group in groups %}
+        <tr>
+            <td>{{ group.name }}</td>
+            <td>{{ group.description }}</td>
+            <td>{{ group.created }}</td>
+            <td>
+                {% for privilege in group.privileges %}
+                {{ privilege.action_name }}  - <a href="/admin/deleteGroupPrivileges/{{privilege.id}}">Удалить привилегию</a></br>
+                {% endfor %}
+            
+            </td>
+            <td><a href="/admin/editGroup/{{ group.id }}">редактировать</a> | 
+                <a href="/admin/editGroupPrivileges/{{ group.id }}">редактировать привилегии</a> | 
+            <a href="/admin/deleteGroup/{{ group.id }}">удалить</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "/admin/baseAdmin.html" %}
+
+{% block content %}
+<form method="POST">
+    Имя: <input type="text" name="first_name"></br>
+    Фамилия: <input type="text" name="last_name"></br>
+    email: <input type="text" name="email"></br>
+    Пароль: <input type="text" name="password"></br>
+    Описание: <input type="text" name="description"></br>
+    <input type="submit">
+</form>
+{% endblock %}

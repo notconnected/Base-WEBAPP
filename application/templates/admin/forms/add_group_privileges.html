@@ -1,0 +1,17 @@
+{% extends "/admin/baseAdmin.html" %}
+
+{% block content %}
+<form method="POST">
+    Группа: <select name="group_id">
+                {% for group in groups %}
+                <option value="{{group.id}}">{{group.name}}</option>
+                {% endfor %}
+            </select></br>
+    Экшен: <select name="action_id">
+                {% for action in actions %}
+                <option value="{{action.id}}">{{action.description}} ({{action.name}})</option>
+                {% endfor %}
+            </select></br>
+    <input type="submit">
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "/admin/baseAdmin.html" %}
+
+{% block content %}
+<form method="POST">
+    Имя группы: <input type="text" name="name" value="{{group.name}}"></br>
+    Описание группы: <input type="text" name="description" value="{{group.description}}"></br>
+    <input type="submit">
+</form>
+{% endblock %}

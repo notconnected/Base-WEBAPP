@@ -1,0 +1,13 @@
+{% extends "/admin/baseAdmin.html" %}
+
+{% block content %}
+<form method="POST">
+    Экшен: <select name="action_name">
+                {% for action_name in actions %}
+                <option value="{{action_name}}">{{action_name}}</option>
+                {% endfor %}
+            </select></br>
+    Описание: <input type="text" name="description"></br>
+    <input type="submit">
+</form>
+{% endblock %}

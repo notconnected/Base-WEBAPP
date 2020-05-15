@@ -1,0 +1,21 @@
+{% extends "admin/baseAdmin.html" %}
+
+{% block content %}
+    <a href="/admin/addAction">Добавить экшен</a></br>
+    <table border="1">
+        <tr>
+            <th>Имя</th>
+            <th>Описание</th>
+            <th>Дата создания</th>
+            <th>Действия</th>
+        </tr>
+        {% for action in actions %}
+        <tr>
+            <td>{{ action.name }}</td>
+            <td>{{ action.description }}</td>
+            <td>{{ action.created }}</td>
+            <td><a href="/admin/deleteAction/{{ action.id }}">удалить</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

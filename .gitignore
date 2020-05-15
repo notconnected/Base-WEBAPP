@@ -1,0 +1,11 @@
+# Директория установленных пакетов по зависимостям Composer
+vendor
+
+# Файл фиксации версий установленных пакетов по зависимостям Composer
+composer.lock
+
+# Файл индексации директорий в системе Mac OS
+.DS_Store
+
+/application/cache
+/application/cache/*
